@@ -32,6 +32,26 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function takePart()
+    {
+        return $this->hasMany('App\Models\Task');
+    }
+
+    public function create()
+    {
+        return $this->hasMany('App\Models\Task');
+    }
+
+    public function write()
+    {
+        return $this->hasMany('App\Models\Comment');
+    }
+
+    public function put()
+    {
+        return $this->hasMany('App\Models\Attachment');
+    }
+
     /**
      * The attributes that should be cast to native types.
      *

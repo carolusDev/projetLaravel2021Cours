@@ -9,6 +9,11 @@ use App\Models\Task;
 class Category extends Model
 {
     use HasFactory;
+    
+    public function has()
+    {
+        return $this->hasMany('App\Models\Task');
+    }
 
     /**
      * Renvoi la liste des tâches possédant cette catégorie
