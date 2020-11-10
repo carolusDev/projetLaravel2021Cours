@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class CategoryTableSeeder extends Seeder
+class BoardsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +15,7 @@ class CategoryTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('board')->insert([
+        DB::table('boards')->insert([
             [ 
             'title' => 'super board de la mort qui tue 0 !',
             'description' => 'super description de la mort qui tue de la super board de la mort qui tue 0 !'

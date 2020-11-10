@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class AttachmentTableSeeder extends Seeder
+class AttachmentsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +15,7 @@ class AttachmentTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('attachment')->insert([
+        DB::table('attachments')->insert([
             [ 
             'file' => 'file0',
             'filename' => 'file0name',

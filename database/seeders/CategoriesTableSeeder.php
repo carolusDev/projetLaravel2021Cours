@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class CommentTableSeeder extends Seeder
+class CategoriesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,13 +15,13 @@ class CommentTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('comment')->insert([
+        DB::table('categories')->insert([
             [ 
-            'text' => 'azerty 0',
+            'name' => 'azerty',
             ],[
-            'text' => 'azerty 1',
+            'name' => 'azerty',
             ],[
-            'text' => 'azerty 2',
+            'name' => 'azerty',
             ]
         ]);
     }

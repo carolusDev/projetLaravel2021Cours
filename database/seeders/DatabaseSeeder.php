@@ -14,6 +14,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        $this->call([AttachmentTableSeeder::class, CommentTableSeeder::class, CategoryTableSeeder::class, TaskTableSeeder::class, BoardTableSeeder::class, UserTableSeeder::class]);
+        $this->call([AttachmentsTableSeeder::class, CommentsTableSeeder::class, CategoriesTableSeeder::class, TasksTableSeeder::class, BoardsTableSeeder::class, UsersTableSeeder::class]);
     }
 }
