@@ -1,14 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\{Task, Category, Board};
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Models\{Task, Category, Board}; use Illuminate\Http\Request; use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
-
 
     /**
      * Create the controller instance.
@@ -17,11 +13,6 @@ class TaskController extends Controller
      */
     public function __construct()
     {
-        /*
-            Cette fonction gère directement les autorisations pour chacune des méthodes du contrôleur
-            en fonction des méthodes de BoardPolicy(viewAny, view, update, ....)
-            https://laravel.com/docs/8.x/authorization#authorizing-resource-controllers
-        */
         $this->authorizeResource(Task::class, 'task');
     }
 
@@ -31,49 +22,39 @@ class TaskController extends Controller
      * @param  \App\Models\Board $board
      * @return \Illuminate\Http\Response
      */
-    public function index(Board $board)
+    public function main(Board $board)
     {
-        //
-        return view('boards.tasks.index', ['board' => $board]);
-
+        //return view();
     }
 
 
     /**
      * Show the form for creating a new resource from a specific board.
      *
-     * @param Board $board : le board pour lequel on crée une tâche
+     * @param Board $board
      *
      * @return \Illuminate\Http\Response
      */
     public function create(Board $board)
     {
-        //
         $user = Auth::user();
         $categories = Category::all();
-        return view('boards.tasks.create', ["user" => $user, "categories" => $categories, 'board' => $board]);
+        //return view();
     }
 
     /**
      * Store a newly created resource in storage for a given board.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param Board $board le board depuis/pour lequel on créé la tâche
+     * @param Board $board
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request, Board $board)
     {
         //
-        $validatedData = $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'max:4096',
-            'due_date' => 'required|date|after:today',
-            'category_id' => 'nullable|integer|exists:categories,id',
-        ]);
-        // TODO : il faut vérifier que le board appartient bien à l'utilisateur :(
         $validatedData['board_id'] = $board->id;
-        Task::create($validatedData); // Nouvelle méthode création, sans avoir à affecter propriété par propriété
-        return redirect()->route('tasks.index', $board);
+        Task::create($validatedData);
+        //return view();
     }
 
     /**
@@ -86,7 +67,7 @@ class TaskController extends Controller
     public function show(Board $board, Task $task)
     {
         //
-        return view('boards.tasks.show', ['board' => $board, 'task' => $task]);
+        //return view();
     }
 
     /**
@@ -100,7 +81,7 @@ class TaskController extends Controller
     {
         $user = Auth::user();
         $categories = Category::all();
-        return view('boards.tasks.edit', ['board' => $board, 'categories' => $categories, 'task' => $task]);
+        //return view();
     }
 
     /**
@@ -116,14 +97,14 @@ class TaskController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'max:4096',
+            'state' => 'required|todo,ongoing,done',
             'due_date' => 'required|date|after:today',
-            'state' => 'required|in:todo,ongoing,done',
             'category_id' => 'nullable|integer|exists:categories,id',
         ]);
-        // TODO : il faut vérifier que le board appartient bien à l'utilisateur :(
+
         $validatedData['board_id'] = $board->id;
-        $task->update($validatedData); // Nouvelle méthode création, sans avoir à affecter propriété par propriété
-        return redirect()->route('tasks.index', $board);
+        $task->update($validatedData);
+        //return view();
     }
 
     /**
@@ -135,8 +116,7 @@ class TaskController extends Controller
      */
     public function destroy(Board $board, Task $task)
     {
-        //
         $task->delete();
-        return redirect()->route('tasks.index', $board);
+        //return view();
     }
 }

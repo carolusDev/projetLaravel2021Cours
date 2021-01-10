@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bacddb1-a86f-4b58-96d9-05d192327ecf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/todo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/todo.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/board/main.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/board/task/edit.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/board/task/main.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,6 +170,8 @@
       <workItem from="1605187455037" duration="12601000" />
       <workItem from="1609708884483" duration="24000" />
       <workItem from="1609709184600" duration="7561000" />
+      <workItem from="1610314277862" duration="3430000" />
+      <workItem from="1610317763385" duration="945000" />
     </task>
     <servers />
   </component>
@@ -183,15 +188,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="762" y="0" width="781" height="870" key="dock-window-1" timestamp="1605190091175">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="762" y="0" width="781" height="870" key="dock-window-1/0.0.1536.864@0.0.1536.864" timestamp="1605190091175" />
-    <state x="762" y="0" width="781" height="870" key="dock-window-2" timestamp="1605191192872">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="762" y="0" width="781" height="870" key="dock-window-2/0.0.1536.864@0.0.1536.864" timestamp="1605191192872" />
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
